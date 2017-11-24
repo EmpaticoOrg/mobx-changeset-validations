@@ -1,0 +1,29 @@
+{
+  "name": "mobx-validations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.main.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/empaticoorg",
+  "author": "andela-gogbara <godwin.onisofien@andela.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean && yarn compile && rollup -c && cp lib/*.d.ts dist",
+    "compile": "yarn tsc",
+    "problems": "yarn lint && yarn tsc  --noEmit",
+    "lint": "tslint -c tslint.json \"src/**/*.ts\"",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "rollup": "^0.51.8",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "tslib": "^1.8.0"
+  }
+}

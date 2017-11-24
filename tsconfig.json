@@ -1,0 +1,21 @@
+{
+  "files": [
+    "src/index.ts"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "lib/",
+
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true
+  }
+}

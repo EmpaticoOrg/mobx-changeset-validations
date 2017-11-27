@@ -1,3 +1,3 @@
 export default () => {
-  return 'Hello from mobx-validations'
+  return 'Hello World'
 }

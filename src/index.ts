@@ -1,3 +1,6 @@
-export default () => {
-  return 'Hello World'
-}
+import required from './validators/required';
+import './utils/types';
+
+export {
+  required
+};

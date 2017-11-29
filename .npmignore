@@ -5,6 +5,5 @@ CODE_OF_CONDUCT.md
 gulpfile.js
 tsconfig.json
 tslint.json
-travis.yml
 .npmignore
 rollup.config.js

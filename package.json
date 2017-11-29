@@ -30,6 +30,6 @@
     "typescript": "^2.6.1"
   },
   "dependencies": {
-    "tslib": "^1.8.0"
+    "mobx": "^3.3.2"
   }
 }

@@ -9,9 +9,7 @@
     "declaration": true,
     "outDir": "lib/",
 
-    "importHelpers": true,
-    "jsx": "react",
-    "lib": ["es6", "dom"],
+    "lib": ["es6"],
 
     "noImplicitAny": true,
     "strictNullChecks": true,

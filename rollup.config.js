@@ -14,7 +14,7 @@ export default [
   {
     input: "./lib/index.js",
     output: {
-      file: "'./dist/index.main.js",
+      file: "./dist/index.main.js",
       format: "cjs"
     },
     plugins

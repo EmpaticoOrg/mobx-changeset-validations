@@ -1,5 +1,5 @@
 {
-  "name": "mobx-validations",
+  "name": "mobx-changeset-validations",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.main.js",
@@ -13,7 +13,7 @@
     "compile": "yarn tsc",
     "problems": "yarn lint && yarn tsc  --noEmit",
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf lib && rm -rf dist",
     "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "devDependencies": {

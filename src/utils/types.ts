@@ -1,18 +1,23 @@
-interface Dict<T> {
+export interface Dict<T> {
   [key: string]: T;
 }
 
-interface FailedValidation {
+export interface FailedValidation {
   type: string;
   key: string;
-  message: string;
-  context?: Dict<string>;
+  message: Dict<string>;
+  context?: Dict<any>; // string | RegExp | number
 }
 
-type ValidatorResult = true | FailedValidation;
+export type ValidatorResult = true | FailedValidation;
 
 // Todo -> Add the correct type here to message
-interface ValidationOptions {
+export interface ValidationOptions {
   message?: any;
-  context?: Dict<string>;
+}
+
+export interface LengthPredicates {
+  min?: number;
+  max?: number;
+  is?: number;
 }

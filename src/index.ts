@@ -7,7 +7,7 @@ import length from './validators/length';
 import propertyRequired from './validators/propertyRequired';
 
 import {isPlainObject} from './utils/isPlainObject';
-import {FailedValidation, ValidationOptions, ValidatorResult} from './utils/types'
+import {FailedValidation, ValidationOptions, ValidatorResult} from './utils/types';
 
 export {
   required,

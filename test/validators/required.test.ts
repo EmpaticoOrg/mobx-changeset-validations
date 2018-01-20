@@ -1,5 +1,5 @@
-import {expect} from 'chai'
 import {observable} from 'mobx';
+import {FailedValidation} from '../../src/utils/types';
 
 import required from '../../src/validators/required';
 import '../../src/utils/types';
@@ -18,7 +18,7 @@ describe('required', () => {
     it(`accepts "${value}" as required`, () => {
       const validator = required();
 
-      expect(validator('key', value)).to.equal(true);
+      expect(validator('key', value)).toEqual(true);
     });
   });
 
@@ -33,8 +33,8 @@ describe('required', () => {
     it(`rejects "${value}" as required`, () => {
       const validator = required();
       const result = validator('key', value) as FailedValidation;
-      expect(result).not.equal(true);
-      expect(result.type).to.equal('required');
+      expect(result).not.toEqual(true);
+      expect(result.type).toEqual('required');
     });
   });
 });

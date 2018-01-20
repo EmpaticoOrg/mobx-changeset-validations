@@ -1,6 +1,4 @@
-import {expect} from 'chai';
 import {FailedValidation} from '../../src/utils/types';
-
 
 import confirmation from '../../src/validators/confirmation';
 import '../../src/utils/types'
@@ -16,7 +14,7 @@ describe('confirmation', () => {
 
     const result = validator('foo', 'fourty two', model);
 
-    expect(result).to.equal(true);
+    expect(result).toEqual(true);
   });
 
   it('rejects if two properties are not the same', () => {
@@ -28,7 +26,7 @@ describe('confirmation', () => {
 
     const result = validator('foo', 'one hundred', model) as FailedValidation;
 
-    expect(result).not.to.equal(true);
-    expect(result.type).to.equal('confirmation');
+    expect(result).not.toEqual(true);
+    expect(result.type).toEqual('confirmation');
   });
 });

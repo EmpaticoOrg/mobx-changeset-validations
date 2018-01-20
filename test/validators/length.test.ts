@@ -1,6 +1,5 @@
 import length from '../../src/validators/length';
 import {observable} from 'mobx'
-import {expect, should} from 'chai'
 import {FailedValidation} from '../../src/utils/types';
 
 
@@ -28,7 +27,7 @@ describe('length', () => {
       it(`accepts "${value.toString()}" as ${Object.keys(options)}`, () => {
         const validator = length(options as any);
 
-        expect(validator('key', value)).to.equal(true);
+        expect(validator('key', value)).toEqual(true);
       });
     });
 
@@ -62,8 +61,8 @@ describe('length', () => {
         const validator = length(options as any);
 
         const result = validator('key', value) as FailedValidation;
-        expect(result).not.to.equal(true);
-        expect(result.type).to.equal(failure);
+        expect(result).not.toEqual(true);
+        expect(result.type).toEqual(failure);
       });
     });
 
@@ -73,7 +72,7 @@ describe('length', () => {
     ['min', 'max', 'is'].forEach((value) => {
       const validator = length({[value]: 0});
 
-      expect(validator('key', [])).to.equal(true);
+      expect(validator('key', [])).toEqual(true);
     });
   });
 

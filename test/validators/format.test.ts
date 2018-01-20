@@ -1,5 +1,3 @@
-import {expect} from 'chai';
-
 import format from '../../src/validators/format';
 import {FailedValidation} from '../../src/utils/types';
 
@@ -10,7 +8,7 @@ describe('format', () => {
 
     const result = validator('foo', 'aa');
 
-    expect(result).to.equal(true);
+    expect(result).toEqual(true);
   });
 
   it('rejects a value that does not match a regex', () => {
@@ -18,7 +16,7 @@ describe('format', () => {
 
     const result = validator('foo', 'a') as FailedValidation;
 
-    expect(result).not.to.equal(true);
-    expect(result.type).to.equal('format');
+    expect(result).not.toEqual(true);
+    expect(result.type).toEqual('format');
   });
 });

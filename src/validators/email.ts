@@ -1,5 +1,6 @@
 import format from './format';
 import {ValidationOptions, ValidatorResult} from '../utils/types';
+import messages from '../utils/messages';
 
 /**
  * Validate an email per http://www.regular-expressions.info/email.html
@@ -7,6 +8,6 @@ import {ValidationOptions, ValidatorResult} from '../utils/types';
 export default function email(opts: ValidationOptions = {}) {
   // Todo: Update copy of default emailmessage
   const defaultMessage = 'Hello There';
-  opts.message  = opts.message ? opts.message : defaultMessage;
+  opts.message  = opts.message ? opts.message : messages.email;
   return format(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/ig, opts);
 }

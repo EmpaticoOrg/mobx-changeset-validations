@@ -1,4 +1,3 @@
-import './utils/types';
 import required from './validators/required';
 import confirmation from './validators/confirmation';
 import email from './validators/email';
@@ -7,6 +6,9 @@ import format from './validators/format';
 import length from './validators/length';
 import propertyRequired from './validators/propertyRequired';
 
+import {isPlainObject} from './utils/isPlainObject';
+import {FailedValidation, ValidationOptions, ValidatorResult} from './utils/types'
+
 export {
   required,
   confirmation,
@@ -14,5 +16,9 @@ export {
   equals,
   format,
   length,
-  propertyRequired
+  propertyRequired,
+  isPlainObject,
+  ValidationOptions,
+  ValidatorResult,
+  FailedValidation
 };

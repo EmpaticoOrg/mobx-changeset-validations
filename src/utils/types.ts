@@ -5,7 +5,7 @@ export interface Dict<T> {
 export interface FailedValidation {
   type: string;
   key: string;
-  message: string;
+  message: Dict<string>;
   context?: Dict<any>; // string | RegExp | number
 }
 

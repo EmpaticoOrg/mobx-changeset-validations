@@ -29,6 +29,8 @@
     "typescript": "^2.6.1"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.0",
+    "lodash-es": "^4.17.4",
     "mobx": "^3.3.2"
   },
   "jest": {

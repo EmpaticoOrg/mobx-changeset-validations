@@ -1,4 +1,5 @@
-import {FailedValidation} from '../../src/utils/types';
+import {FailedValidation, MessageDescriptors} from '../../src/utils/types';
+import messages from '../../src/utils/messages';
 
 import confirmation from '../../src/validators/confirmation';
 import '../../src/utils/types'
@@ -24,9 +25,10 @@ describe('confirmation', () => {
 
     const validator = confirmation('bar');
 
-    const result = validator('foo', 'one hundred', model) as FailedValidation;
+    const result = validator('foo', 'one hundred', model) as MessageDescriptors;
 
     expect(result).not.toEqual(true);
-    expect(result.type).toEqual('confirmation');
+    expect(result.values.type).toEqual('confirmation');
+    expect(result.defaultMessage).toEqual(messages['confirmation'].defaultMessage);
   });
 });

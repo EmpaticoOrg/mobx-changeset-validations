@@ -1,8 +1,9 @@
 import {observable} from 'mobx';
-import {FailedValidation} from '../../src/utils/types';
+import {FailedValidation, MessageDescriptors} from '../../src/utils/types';
 
 import required from '../../src/validators/required';
 import '../../src/utils/types';
+import messages from '../../src/utils/messages';
 
 describe('required', () => {
   [
@@ -32,9 +33,10 @@ describe('required', () => {
   ].forEach((value) => {
     it(`rejects "${value}" as required`, () => {
       const validator = required();
-      const result = validator('key', value) as FailedValidation;
+      const result = validator('key', value) as MessageDescriptors;
       expect(result).not.toEqual(true);
-      expect(result.type).toEqual('required');
+      expect(result.values.type).toEqual('required');
+      expect(result.defaultMessage).toEqual(messages.required.defaultMessage)
     });
   });
 });

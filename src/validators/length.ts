@@ -1,6 +1,8 @@
 import {isPlainObject} from '../utils/isPlainObject';
 import {isObservableMap} from 'mobx';
 import {ValidationOptions, ValidatorResult, LengthPredicates} from '../utils/types';
+import messages from '../utils/messages';
+import {buildMessage} from '../utils/buildMessage';
 
 /**
  * Validate that a value is a certain length. Options are `min`, `max`, and `is` for an exact length.
@@ -36,6 +38,7 @@ export default function length(lengthCheck: LengthPredicates, opts: ValidationOp
       throw new Error(`no length predicate given`);
     }
 
-    return valid ? true : {type: validation, key, message: opts.message, context: {...lengthCheck}};
+    opts.message  = opts.message ? opts.message : messages[validation];
+    return valid ? true : buildMessage({type: validation, key, message: opts.message, context: {...lengthCheck}});
   };
 }

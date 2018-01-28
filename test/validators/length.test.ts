@@ -1,6 +1,7 @@
 import length from '../../src/validators/length';
 import {observable} from 'mobx'
-import {FailedValidation} from '../../src/utils/types';
+import {FailedValidation, MessageDescriptors} from '../../src/utils/types';
+import messages from '../../src/utils/messages';
 
 
 describe('length', () => {
@@ -60,9 +61,10 @@ describe('length', () => {
       it(`rejects "${value.toString()}" as ${Object.keys(options)}`, () => {
         const validator = length(options as any);
 
-        const result = validator('key', value) as FailedValidation;
+        const result = validator('key', value) as MessageDescriptors;
         expect(result).not.toEqual(true);
-        expect(result.type).toEqual(failure);
+        expect(result.values.type).toEqual(failure);
+        expect(result.defaultMessage).toEqual(messages[failure].defaultMessage)
       });
     });
 
@@ -79,12 +81,12 @@ describe('length', () => {
   it('errors if no length predicate is given', () => {
     const validator = length({});
 
-    // expect(() => validator('key', [])).toThrowError();
+    expect(() => validator('key', [])).toThrowError();
   });
 
   it('errors if an property with no length is given', () => {
     const validator = length({min: 0});
 
-    // expect(() => validator('key', false)).toThrowError();
+    expect(() => validator('key', false)).toThrowError();
   });
 });

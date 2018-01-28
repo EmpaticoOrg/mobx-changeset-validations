@@ -1,5 +1,6 @@
 import format from '../../src/validators/format';
-import {FailedValidation} from '../../src/utils/types';
+import {FailedValidation, MessageDescriptors} from '../../src/utils/types';
+import messages from '../../src/utils/messages';
 
 
 describe('format', () => {
@@ -14,9 +15,10 @@ describe('format', () => {
   it('rejects a value that does not match a regex', () => {
     const validator = format(/[a-z]{2}/);
 
-    const result = validator('foo', 'a') as FailedValidation;
+    const result = validator('foo', 'a') as MessageDescriptors;
 
     expect(result).not.toEqual(true);
-    expect(result.type).toEqual('format');
+    expect(result.values.type).toEqual('format');
+    expect(result.defaultMessage).toEqual(messages.format.defaultMessage);
   });
 });
